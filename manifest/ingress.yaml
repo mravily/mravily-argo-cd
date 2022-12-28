@@ -15,4 +15,4 @@ spec:
           service:
             name: angular-s
             port:
-              number: 4200
+              number: 80
