@@ -16,3 +16,7 @@ spec:
             name: angular-s
             port:
               number: 80
+status:
+  loadBalancer:
+    ingress:
+      - ip: 0.0.0.0

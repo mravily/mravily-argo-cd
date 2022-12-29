@@ -13,19 +13,18 @@ spec:
         app: angular
     spec:
       containers:
-      - name: mravily-angular
-        image: mravily/angular:parrot
-        ports:
-          - containerPort: 4200
-        resources:
-          limits:
-            memory: "1Gi"
-            cpu: "1000m"
+        - name: mravily-angular
+          image: mravily/angular:parrot
+          ports:
+            - containerPort: 4200
+          resources:
+            limits:
+              memory: "1Gi"
+              cpu: "1000m"
       # Claim PV
       # Try to install package.json
-      # Start App 
+      # Start App
       # Make access from outside the cluster with NodePort
-
 #---
 
 # apiVersion: v1
