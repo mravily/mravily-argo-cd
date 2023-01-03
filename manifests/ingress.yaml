@@ -2,7 +2,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: angular-rules
+  name: parrot-rules
+  namespace: dev
   annotations:
     ingress.kubernetes.io/ssl-redirect: "false"
 spec:
@@ -13,6 +14,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: angular-s
+                name: parrot-s
                 port:
                   number: 80

@@ -1,22 +1,24 @@
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: angular
+  name: parrot-deploy
+  namespace: dev
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: angular
+      app: parrot
   template:
     metadata:
       labels:
-        app: angular
+        app: parrot
     spec:
       containers:
-        - name: mravily-angular
-          image: mravily/angular:parrot
+        - name: parrot
+          image: mravily/parrot:v1
           ports:
-            - containerPort: 4200
+            - containerPort: 80
           resources:
             limits:
               memory: "1Gi"

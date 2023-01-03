@@ -2,11 +2,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: angular-s
+  name: parrot-s
+  namespace: dev
 spec:
   type: ClusterIP
   selector:
-    app: angular
+    app: parrot
   ports:
-  - port: 4200
-    targetPort: 4200
+  - port: 80
+    targetPort: 80
