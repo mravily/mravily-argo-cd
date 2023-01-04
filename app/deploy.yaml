@@ -4,7 +4,7 @@ metadata:
   name: parrot-deploy
   namespace: dev
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: parrot
@@ -14,7 +14,7 @@ spec:
         app: parrot
     spec:
       containers:
-        - name: parrot
+        - name: parrot-c
           image: mravily/parrot:v1
           ports:
             - containerPort: 80
