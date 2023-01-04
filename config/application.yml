@@ -1,21 +1,16 @@
-
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: parrot-app
   # You'll usually want to add your resources to the argocd namespace.
   namespace: argocd
-  # Add labels to your application object.
-  labels:
-    name: argocd
 spec:
   # The project the application belongs to.
-  project: parrot
+  project: default
 
   # Source of the application manifests
   source:
     repoURL: https://github.com/mravily/mravily-argo-cd.git  # Can point to either a Helm chart repo or a git repo.
-    targetRevision: HEAD  # For Helm, this refers to the chart version.
     path: app  # This has no meaning for Helm charts pulled directly from a Helm repo instead of git.
 
   # Destination cluster and namespace to deploy the application
