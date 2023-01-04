@@ -10,7 +10,7 @@ kubeAPI: # same as `--api-port myhost.my.domain:6445` (where the name would reso
   hostPort: "6445" # where the Kubernetes API listening port will be mapped to on your host system
 image: rancher/k3s:v1.22.17-k3s1 # same as `--image rancher/k3s:v1.20.4-k3s1`
 volumes: # repeatable flags are represented as YAML lists
-  - volume: $PWD/manifests/:/var/lib/rancher/k3s/server/manifests/ # same as `--volume '/my/host/path:/path/in/node@server:0;agent:*'`
+  - volume: $PWD/IoT/manifests/:/var/lib/rancher/k3s/server/manifests/ # same as `--volume '/my/host/path:/path/in/node@server:0;agent:*'`
     nodeFilters:
       - server:*
 ports:
