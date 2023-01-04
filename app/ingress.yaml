@@ -17,3 +17,11 @@ spec:
                 name: parrot-s
                 port:
                   number: 80
+          
+          - path: /argocd
+            pathType: Prefix
+            backend:
+              service:
+                name: argocd-server
+                port:
+                  number: 80
