@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: parrot
-          image: mravily/parrot:v1
+          image: mravily/parrot:v2
           ports:
             - containerPort: 80
           resources:
