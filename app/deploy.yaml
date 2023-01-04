@@ -3,29 +3,29 @@ kind: Deployment
 metadata:
   name: parrot-deploy
   namespace: dev
-  spec:
-    replicas: 1
-    selector:
-      matchLabels:
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: parrot
+  template:
+    metadata:
+      labels:
         app: parrot
-    template:
-      metadata:
-        labels:
-          app: parrot
-      spec:
-        containers:
-          - name: parrot
-            image: mravily/parrot:v1
-            ports:
-              - containerPort: 80
-            resources:
-              limits:
-                memory: "1Gi"
-                cpu: "1000m"
-        # Claim PV
-        # Try to install package.json
-        # Start App
-        # Make access from outside the cluster with NodePort
+    spec:
+      containers:
+        - name: parrot
+          image: mravily/parrot:v1
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              memory: "1Gi"
+              cpu: "1000m"
+              # Claim PV
+              # Try to install package.json
+              # Start App
+              # Make access from outside the cluster with NodePort
   #---
 
   # apiVersion: v1
