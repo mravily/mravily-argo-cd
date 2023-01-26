@@ -1,0 +1,42 @@
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: argocd-ingress
+#   labels:
+#     app: argocd
+#   annotations:
+#     ingress.kubernetes.io/ssl-redirect: "true"
+# spec:
+#   rules:
+#     - http:
+#         paths:
+#           - path: /argocd
+#             pathType: Prefix
+#             backend:
+#               service:
+#                 name: argocd-server
+#                 port:
+#                   number: 80
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+    name: argocd-ingress
+    namespace: argocd
+    labels:
+      app.kubernetes.io/component: server
+      app.kubernetes.io/name: argocd-server
+      app.kubernetes.io/part-of: argocd
+    annotations:
+      ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  rules:
+    - host: localhost 
+      http:
+        paths:
+          - path: /argocd
+            pathType: Prefix
+            backend:
+              service:
+                name: argocd-server
+                port:
+                  number: 80

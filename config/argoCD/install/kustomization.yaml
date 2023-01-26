@@ -5,7 +5,7 @@ resources:
   - https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
 # ## changes to config maps
-# patchesStrategicMerge:
-#   - argocd-cmd-params-cm-patch.yml
+patchesStrategicMerge:
+  - argocd-cmd-params-cm-patch.yml
 
 namespace: argocd
