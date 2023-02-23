@@ -5,7 +5,7 @@
 #   labels:
 #     app: argocd
 #   annotations:
-#     ingress.kubernetes.io/ssl-redirect: "true"
+#     ingress.kubernetes.io/ssl-redirect: "false"
 # spec:
 #   rules:
 #     - http:
@@ -23,11 +23,12 @@ metadata:
     name: argocd-ingress
     namespace: argocd
     labels:
-      app.kubernetes.io/component: server
-      app.kubernetes.io/name: argocd-server
-      app.kubernetes.io/part-of: argocd
+      app: argocd
+    #   # app.kubernetes.io/component: server
+    #   # app.kubernetes.io/name: argocd-server
+    #   # app.kubernetes.io/part-of: argocd
     annotations:
-      ingress.kubernetes.io/ssl-redirect: "true"
+      ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
     - host: localhost 
