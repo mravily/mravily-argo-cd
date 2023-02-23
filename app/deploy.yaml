@@ -15,30 +15,10 @@ spec:
     spec:
       containers:
         - name: parrot-c
-          image: mravily/parrot:v1
+          image: mravily/parrot:v2
           ports:
             - containerPort: 80
           resources:
             limits:
               memory: "1Gi"
               cpu: "1000m"
-              # Claim PV
-              # Try to install package.json
-              # Start App
-              # Make access from outside the cluster with NodePort
-  #---
-
-  # apiVersion: v1
-  # kind: PersistentVolume
-  # metadata:
-  #   name: angular-pv
-  # spec:
-  #   capacity:
-  #     storage: 1Gi
-  #   volumeMode: Filesystem
-  #   accessModes:
-  #     - ReadWriteMany
-  #   storageClassName: manual
-  #   nfs:
-  #     path: /data
-  #     server: 192.168.64.1
